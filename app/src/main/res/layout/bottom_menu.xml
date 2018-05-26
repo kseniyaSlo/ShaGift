@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:background="@color/actionBarBg"
+    android:padding="10dp">
+
+    <ImageButton
+        android:id="@+id/bottom_menu_home"
+        style="@style/BottomButton"
+        android:src="@drawable/ic_home_white_36dp" />
+
+    <ImageButton
+        android:id="@+id/bottom_menu_search"
+        style="@style/BottomButton"
+        android:src="@drawable/ic_search_white_36dp" />
+
+    <ImageButton
+        android:id="@+id/bottom_menu_addgift"
+        style="@style/BottomButton"
+        android:src="@drawable/ic_add_circle_outline_white_36dp" />
+
+    <ImageButton
+        android:id="@+id/bottom_menu_faivorite"
+        style="@style/BottomButton"
+        android:src="@drawable/ic_stars_white_36dp" />
+
+    <ImageButton
+        android:id="@+id/bottom_menu_list"
+        style="@style/BottomButton"
+        android:src="@drawable/ic_perm_identity_white_36dp" />
+
+</LinearLayout>

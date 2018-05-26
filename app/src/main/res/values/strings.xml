@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">ShaGift</string>
+    <string name="like">Like</string>
+    <string name="comment">Comment</string>
+    <string name="description">Description</string>
+    <string name="favorite">Favorite</string>
+    <string name="share">Share</string>
+
+    <string name="abc_an_amazing_alphabet_book">ABC: An Amazing Alphabet Book!</string>
+    <string name="now">now</string>
+
+</resources>
