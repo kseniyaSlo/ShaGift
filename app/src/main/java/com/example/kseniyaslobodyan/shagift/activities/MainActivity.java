@@ -1,21 +1,18 @@
-package com.example.kseniyaslobodyan.shagift;
+package com.example.kseniyaslobodyan.shagift.activities;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.provider.MediaStore;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
+
+import com.example.kseniyaslobodyan.shagift.adapters.DashboardAdapter;
+import com.example.kseniyaslobodyan.shagift.model.GiftPost;
+import com.example.kseniyaslobodyan.shagift.R;
+import com.example.kseniyaslobodyan.shagift.model.User;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -45,6 +42,10 @@ public class MainActivity extends AppCompatActivity {
             new GiftPost(6,R.string.abc_an_amazing_alphabet_book,user3,R.string.now,R.drawable.image4),
             new GiftPost(7,R.string.abc_an_amazing_alphabet_book,user2,R.string.now,R.drawable.image7),
             new GiftPost(9,R.string.abc_an_amazing_alphabet_book,user3,R.string.now,R.drawable.image8),
+            new GiftPost(2,R.string.abc_an_amazing_alphabet_book,user2,R.string.now,R.drawable.image2),
+            new GiftPost(3,R.string.abc_an_amazing_alphabet_book,user3,R.string.now,R.drawable.image3),
+            new GiftPost(4,R.string.abc_an_amazing_alphabet_book,user1,R.string.now,R.drawable.image5),
+            new GiftPost(5,R.string.abc_an_amazing_alphabet_book,user2,R.string.now,R.drawable.image6)
     };
 
     @Override

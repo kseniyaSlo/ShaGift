@@ -1,13 +1,18 @@
-package com.example.kseniyaslobodyan.shagift;
+package com.example.kseniyaslobodyan.shagift.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.kseniyaslobodyan.shagift.model.GiftPost;
+import com.example.kseniyaslobodyan.shagift.R;
+import com.example.kseniyaslobodyan.shagift.activities.DetailGiftPostActivity;
 import com.squareup.picasso.Picasso;
 
 
@@ -20,7 +25,7 @@ public class DashboardAdapter  extends BaseAdapter {
         //private final TextView nameTextView;
         //private final TextView authorTextView;
         // private final ImageView imageViewFavorite;
-
+        TextView nameTextView;
         ImageView imageViewCoverArt;
 
         private ViewHolder(ImageView imageViewCoverArt) {
@@ -51,6 +56,7 @@ public class DashboardAdapter  extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+
         final GiftPost giftPost = giftPosts[position];
 
         if (convertView == null) {
@@ -68,6 +74,12 @@ public class DashboardAdapter  extends BaseAdapter {
             @Override
             public void onClick(View v) {
                 Toast.makeText(v.getContext(), "Clicked on Image in dashboard", Toast.LENGTH_LONG).show();
+
+                //Intent from BaseAdapter
+                Intent intent = new Intent(mContext, DetailGiftPostActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                mContext.startActivity(intent);
+
             }
         });
 

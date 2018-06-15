@@ -26,10 +26,10 @@
         android:layout_marginTop="8dp"
         android:text="TextView"
         app:layout_constraintStart_toEndOf="@+id/feed_post_profile_img"
-        app:layout_constraintTop_toBottomOf="@+id/feed_post_name" />
+        app:layout_constraintTop_toBottomOf="@+id/detail_post_name" />
 
     <TextView
-        android:id="@+id/feed_post_name"
+        android:id="@+id/detail_post_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
@@ -55,48 +55,47 @@
         android:id="@+id/linearLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="4dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
         android:layout_marginStart="16dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        >
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent">
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:layout_margin="5dp"
             android:layout_weight="1"
             android:background="@color/transparent"
-            android:drawableLeft="@drawable/ic_thumb_up_black_24dp"
-            android:text="@string/like"
-            android:layout_margin="5dp"
+            android:drawableLeft="@drawable/ic_favorite_black_24dp"
+            android:focusable="false"
             android:padding="5dp"
-            android:focusable="false"/>
+            android:text="@string/favorites" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@color/transparent"
-            android:drawableLeft="@drawable/ic_comment_black_24dp"
-            android:text="@string/description"
             android:layout_margin="5dp"
-            android:padding="5dp"
-            android:focusable="false"/>
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@color/transparent"
             android:drawableLeft="@drawable/ic_share_black_24dp"
-            android:text="@string/share"
+            android:focusable="false"
             android:padding="5dp"
+            android:text="@string/share" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:layout_margin="5dp"
-            android:focusable="false"/>
+            android:layout_weight="1"
+            android:background="@color/transparent"
+            android:drawableLeft="@drawable/ic_comment_black_24dp"
+            android:focusable="false"
+            android:padding="5dp"
+            android:text="@string/feedback" />
+
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

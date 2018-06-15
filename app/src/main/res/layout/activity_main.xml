@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".activities.MainActivity">
 
    <!-- <android.support.v7.widget.RecyclerView
         android:id="@+id/lstGrid"
@@ -23,10 +23,8 @@
         android:layout_alignParentTop="true"
         android:background="@android:color/white"
         android:gravity="center"
-        android:columnWidth="150dp"
+        android:columnWidth="130dp"
         android:numColumns="auto_fit"
-
-
         />
 
     <include android:id="@+id/bottom_menu"

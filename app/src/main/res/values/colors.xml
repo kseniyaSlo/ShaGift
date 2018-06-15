@@ -4,5 +4,27 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="actionBarBg">#3B1D39</color>
+    <color name="actionBarBg1">#4c254a</color>
+    <color name="ColorDot">#92617E</color>
+
     <color name="transparent">#80ffffff</color>
+    <color name="bg">#DEDEDE</color>
+    <color name="colorIntro">#C8402A</color>
+
+
+    <!---Login colors-->
+    <color name="bg_login">#26ae90</color>
+    <color name="bg_register">#2e3237</color>
+    <color name="bg_main">#428bca</color>
+    <color name="white">#ffffff</color>
+    <color name="input_login">#222222</color>
+    <color name="input_login_hint">#999999</color>
+    <color name="input_register">#888888</color>
+    <color name="input_register_bg">#3b4148</color>
+    <color name="input_register_hint">#5e6266</color>
+    <color name="btn_login">#26ae90</color>
+    <color name="btn_login_bg">#eceef1</color>
+    <color name="lbl_name">#333333</color>
+    <color name="btn_logut_bg">#ff6861</color>
+
 </resources>

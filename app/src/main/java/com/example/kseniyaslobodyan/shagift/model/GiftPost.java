@@ -1,4 +1,4 @@
-package com.example.kseniyaslobodyan.shagift;
+package com.example.kseniyaslobodyan.shagift.model;
 
 public class GiftPost {
     int id;

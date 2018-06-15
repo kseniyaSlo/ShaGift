@@ -1,4 +1,4 @@
-package com.example.kseniyaslobodyan.shagift;
+package com.example.kseniyaslobodyan.shagift.activities;
 
 import android.content.Intent;
 import android.support.v7.app.ActionBar;
@@ -8,6 +8,11 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageButton;
 import android.widget.ListView;
+
+import com.example.kseniyaslobodyan.shagift.model.GiftPost;
+import com.example.kseniyaslobodyan.shagift.adapters.ListAdapter;
+import com.example.kseniyaslobodyan.shagift.R;
+import com.example.kseniyaslobodyan.shagift.model.User;
 
 import java.util.ArrayList;
 import java.util.List;

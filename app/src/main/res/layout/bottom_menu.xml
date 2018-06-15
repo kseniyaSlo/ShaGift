@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_alignParentBottom="true"
-    android:background="@color/actionBarBg"
+    android:background="@color/ColorDot"
     android:padding="10dp">
 
     <ImageButton

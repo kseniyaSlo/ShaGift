@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "196756121786",
+    "firebase_url": "https://shagift-cf9d9.firebaseio.com",
+    "project_id": "shagift-cf9d9",
+    "storage_bucket": "shagift-cf9d9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:196756121786:android:9bcdec9250ad028f",
+        "android_client_info": {
+          "package_name": "com.example.kseniyaslobodyan.shagift"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "196756121786-t2ln8qnga8saemks62m5t751t3k4alav.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "196756121786-t2ln8qnga8saemks62m5t751t3k4alav.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBETplEyPuAjAedkULBXMZ8LRm0i8Vcq74"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

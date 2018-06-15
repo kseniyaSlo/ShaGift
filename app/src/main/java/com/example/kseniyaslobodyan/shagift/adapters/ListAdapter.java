@@ -1,4 +1,4 @@
-package com.example.kseniyaslobodyan.shagift;
+package com.example.kseniyaslobodyan.shagift.adapters;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,6 +7,9 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.kseniyaslobodyan.shagift.model.GiftPost;
+import com.example.kseniyaslobodyan.shagift.R;
 
 import java.util.List;
 
@@ -47,7 +50,7 @@ public class ListAdapter extends BaseAdapter {
             convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.feed_post_layout, parent, false);
 
             ViewHolder viewHolder = new ViewHolder();
-            viewHolder.userName = convertView.findViewById(R.id.feed_post_name);
+            viewHolder.userName = convertView.findViewById(R.id.detail_post_name);
             viewHolder.whenGiftIsPost = convertView.findViewById(R.id.feed_post_when);
             viewHolder.userProfileImage = convertView.findViewById(R.id.feed_post_profile_img);
             viewHolder.imgGift = convertView.findViewById(R.id.feed_post_img);
