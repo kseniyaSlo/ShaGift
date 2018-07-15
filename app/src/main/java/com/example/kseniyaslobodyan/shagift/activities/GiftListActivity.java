@@ -69,9 +69,9 @@ public class GiftListActivity extends AppCompatActivity {
                 R.drawable.image8,
                 R.drawable.image9};
 
-        User user1 = new User("Kseniya1","tes1",R.drawable.post_profile1);
-        User user2 = new User("Kseniya2","tes2",R.drawable.post_profile1);
-        User user3 = new User("Kseniya3","tes3",R.drawable.post_profile1);
+        User user1 = new User("Kseniya1 test",R.drawable.post_profile1);
+        User user2 = new User("Dan test",R.drawable.post_profile1);
+        User user3 = new User("Ron test",R.drawable.post_profile1);
 
         List<GiftPost> gPosts = new ArrayList<>();
         {

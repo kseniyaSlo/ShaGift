@@ -1,22 +1,16 @@
 package com.example.kseniyaslobodyan.shagift.model;
 
 public class User {
-    String firstName;
-    String lastName;
+    String Name;
     int profileImage;
 
-    public User(String firstName, String lastName,int profileImage) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+    public User(String Name,int profileImage) {
+        this.Name = Name;
         this.profileImage = profileImage;
     }
 
-    public String getfirstName() {
-        return this.firstName;
-    }
-
-    public String getlastName() {
-        return this.lastName;
+    public String getName() {
+        return this.Name;
     }
 
     public int getProfileImage() {

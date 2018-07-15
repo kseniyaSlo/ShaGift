@@ -25,6 +25,18 @@
     <color name="btn_login">#26ae90</color>
     <color name="btn_login_bg">#eceef1</color>
     <color name="lbl_name">#333333</color>
-    <color name="btn_logut_bg">#ff6861</color>
 
+    <color name="bg_login1">#26ae90</color>
+    <color name="bg_register1">#2e3237</color>
+    <color name="bg_main1">#428bca</color>
+    <color name="white1">#ffffff</color>
+    <color name="input_login1">#222222</color>
+    <color name="input_login_hint1">#999999</color>
+    <color name="input_register1">#888888</color>
+    <color name="input_register_bg1">#3b4148</color>
+    <color name="input_register_hint1">#5e6266</color>
+    <color name="btn_login1">#26ae90</color>
+    <color name="btn_login_bg1">#eceef1</color>
+    <color name="lbl_name1">#333333</color>
+    <color name="btn_logut_bg1">#ff6861</color>
 </resources>

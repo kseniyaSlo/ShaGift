@@ -16,19 +16,19 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".activities.MainActivity" />
-        <activity android:name=".activities.IntroActivity" />
-        <activity android:name=".activities.MenuBarActivity" />
-        <activity android:name=".activities.GiftListActivity" />
-        <activity android:name=".activities.DetailGiftPostActivity" />
-        <activity android:name=".activities.SignupActivity"/>
-        <activity android:name=".activities.ResetPasswordActivity" />
-        <activity android:name=".activities.LoginActivity"
-            android:theme="@style/AppIntro">
+        <activity android:name=".activities.IntroActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
+                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+    <activity android:name=".activities.AboutActivity" />
+        <activity android:name=".activities.GiftListActivity" />
+        <activity android:name=".activities.DetailGiftPostActivity" />
+        <activity android:name=".activities.RegisterActivity" />
+        <activity android:name=".activities.ResetPasswordActivity" />
+        <activity android:name=".activities.LoginActivity" android:theme="@style/AppIntro"/>
     </application>
 
 </manifest>

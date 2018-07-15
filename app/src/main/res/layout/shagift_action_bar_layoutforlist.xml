@@ -6,25 +6,14 @@
     android:layout_height="wrap_content"
     android:padding="5dp">
 
-
     <ImageButton
         android:id="@+id/actionBar_btndashboard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_centerVertical="true"
-        android:background="@color/actionBarBg"
-        app:srcCompat="@drawable/ic_dashboard_white_36dp" />
-
-
-    <ImageButton
-        android:id="@+id/actionBar_btnsettings"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_centerVertical="true"
-        android:background="@color/actionBarBg"
-        app:srcCompat="@drawable/ic_settings_white_36dp"
+        android:background="@null"
+        app:srcCompat="@drawable/ic_dashboard_white_36dp"
         tools:ignore="DuplicateIds" />
 
     <ImageView
@@ -34,5 +23,6 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="0dp"
-        app:srcCompat="@drawable/logo" />
+        app:srcCompat="@drawable/logoicon" />
+
 </RelativeLayout>

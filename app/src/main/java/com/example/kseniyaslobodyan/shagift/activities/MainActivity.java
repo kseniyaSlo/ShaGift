@@ -1,13 +1,24 @@
 package com.example.kseniyaslobodyan.shagift.activities;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageButton;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+
 
 import com.example.kseniyaslobodyan.shagift.adapters.DashboardAdapter;
 import com.example.kseniyaslobodyan.shagift.model.GiftPost;
@@ -15,7 +26,7 @@ import com.example.kseniyaslobodyan.shagift.R;
 import com.example.kseniyaslobodyan.shagift.model.User;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity  {
 
     //Hard Code data until the server will connected
     int[] images = {R.drawable.image1,
@@ -28,9 +39,10 @@ public class MainActivity extends AppCompatActivity {
             R.drawable.image8,
             R.drawable.image9};
 
-    User user1 = new User("Kseniya1","tes1",R.drawable.post_profile1);
-    User user2 = new User("Kseniya2","tes2",R.drawable.post_profile1);
-    User user3 = new User("Kseniya3","tes3",R.drawable.post_profile1);
+
+    User user1 = new User("Kseniya1 test",R.drawable.post_profile1);
+    User user2 = new User("Dan test",R.drawable.post_profile1);
+    User user3 = new User("Ron test",R.drawable.post_profile1);
 
     //int id, int nameGift,  User author, int whenPosted, int imageUrl,
     private GiftPost[] giftPos = {
@@ -85,16 +97,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
                 }
         });
-
-        ImageButton btnRight = (ImageButton) findViewById(R.id.actionBar_btnsettings);
-        btnRight.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, MenuBarActivity.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-                startActivity(intent);
-            }
-        });
     }
 
     @Override
@@ -105,6 +107,40 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    //ust as we did when creating our SearchView widget, we'll inflate our new menu in an onCreateOptionsMenu() method within MainActivity
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_main, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
 
+    //tell our app what action to perform when the user selects the logout option.
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.action_logout) {
+            logout();
+            return true;
+        }
+        else if (id == R.id.action_about) {
+            About();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    //logout and move to login screen
+    private void logout() {
+        FirebaseAuth.getInstance().signOut();
+        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+        finish();
+
+    }
+
+    private void About() {
+    }
 }
 
