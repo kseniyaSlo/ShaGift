@@ -13,12 +13,6 @@
         android:src="@drawable/ic_home_white_36dp" />
 
     <ImageButton
-        android:id="@+id/bottom_menu_search"
-        style="@style/BottomButton"
-        android:background="@null"
-        android:src="@drawable/ic_search_white_36dp" />
-
-    <ImageButton
         android:id="@+id/bottom_menu_addgift"
         style="@style/BottomButton"
         android:background="@null"
@@ -31,7 +25,7 @@
         android:src="@drawable/ic_stars_white_36dp" />
 
     <ImageButton
-        android:id="@+id/bottom_menu_list"
+        android:id="@+id/bottom_menu_userprofile"
         style="@style/BottomButton"
         android:background="@null"
         android:src="@drawable/ic_perm_identity_white_36dp" />

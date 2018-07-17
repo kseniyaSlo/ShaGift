@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/font1"
+    android:gravity="center_vertical">
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="88dp"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:text="Add a new post"
+            android:textColor="@color/white"
+            android:textSize="24dp"
+            android:textStyle="bold" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:id="@+id/etName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/new_postname"
+            android:textColor="@color/white"
+            android:textColorLink="@color/white" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:id="@+id/etDesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/new_postdesc"
+            android:textColor="@color/white"
+            android:textColorLink="@color/white" />
+    </TableRow>
+
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/btnGallery"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:drawableLeft="@android:drawable/ic_menu_gallery"
+            android:text="@string/new_gallery"
+            android:textColorLink="@color/white"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/btnCapture"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:drawableLeft="@android:drawable/ic_menu_camera"
+            android:text="@string/new_capture"
+            android:textColorLink="@color/white"
+            android:textSize="12sp" />
+
+    </TableRow>
+
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imgNew"
+            android:layout_width="match_parent"
+            android:layout_height="177dp"
+            android:layout_weight="1" />
+
+        <VideoView
+            android:id="@+id/videoPlayer"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_weight="1"
+            android:visibility="gone" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/btnPost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableLeft="@android:drawable/ic_menu_send"
+            android:text="@string/new_send"
+            android:textAlignment="center"
+            android:textColorLink="@color/white" />
+
+    </TableRow>
+</TableLayout>

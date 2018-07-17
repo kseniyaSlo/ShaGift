@@ -18,9 +18,9 @@ public class ListAdapter extends BaseAdapter {
     List<GiftPost> giftPosts;
 
     private class ViewHolder{
-        TextView userName;
-        TextView whenGiftIsPost;
-        ImageView userProfileImage;
+        TextView authorPost;
+        TextView postName;
+        TextView postDesc;
         ImageView imgGift;
     }
 
@@ -50,9 +50,9 @@ public class ListAdapter extends BaseAdapter {
             convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.feed_post_layout, parent, false);
 
             ViewHolder viewHolder = new ViewHolder();
-            viewHolder.userName = convertView.findViewById(R.id.detail_post_name);
-            viewHolder.whenGiftIsPost = convertView.findViewById(R.id.feed_post_when);
-            viewHolder.userProfileImage = convertView.findViewById(R.id.feed_post_profile_img);
+            viewHolder.authorPost = convertView.findViewById(R.id.feed_authorpost);
+            viewHolder.postName = convertView.findViewById(R.id.feed_postnmame);
+            viewHolder.postDesc = convertView.findViewById(R.id.feed_postdesc);
             viewHolder.imgGift = convertView.findViewById(R.id.feed_post_img);
 
             convertView.setTag(viewHolder);
@@ -61,9 +61,9 @@ public class ListAdapter extends BaseAdapter {
         GiftPost gp = giftPosts.get(position);
         ViewHolder viewHolder = (ViewHolder) convertView.getTag();
 
-        viewHolder.userName.setText(gp.getNameGift());
-        viewHolder.whenGiftIsPost.setText(gp.getWhenPosted());
-        viewHolder.userProfileImage.setImageResource(gp.getProfileImage());
+        viewHolder.authorPost.setText(gp.getNamePost());
+        viewHolder.postName.setText(gp.getNamePost());
+        viewHolder.postDesc.setText(gp.getDescPodt());
         viewHolder.imgGift.setImageResource(gp.getImageUrl());
 
         viewHolder.imgGift.setOnClickListener(new View.OnClickListener() {

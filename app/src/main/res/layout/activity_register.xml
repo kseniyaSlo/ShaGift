@@ -25,13 +25,13 @@
         android:paddingRight="20dp">
 
         <EditText
-            android:id="@+id/Name"
+            android:id="@+id/name"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:background="@drawable/rounded_edittext"
             android:hint="@string/hint_Name"
-            android:inputType="textEmailAddress"
+            android:inputType="textPersonName"
             android:padding="10dp"
             android:singleLine="true"
             android:textColor="@color/input_login"

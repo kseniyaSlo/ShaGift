@@ -26,10 +26,10 @@
         android:text="TextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/feed_post_profile_img"
-        app:layout_constraintTop_toBottomOf="@+id/detail_post_name" />
+        app:layout_constraintTop_toBottomOf="@+id/feed_postnmame" />
 
     <TextView
-        android:id="@+id/detail_post_name"
+        android:id="@+id/feed_postnmame"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"

@@ -1,42 +1,34 @@
 package com.example.kseniyaslobodyan.shagift.model;
 
 public class GiftPost {
-    int id;
-    int nameGift;
-    int imageUrl;
     User author;
-    int whenPosted;
+    int namepost;
+    int descpodt ;
+    int imageUrl;
     //private boolean isFavorite = false;
 
-    public GiftPost(int id, int nameGift,  User author, int whenPosted, int imageUrl) {
-        this.id = id;
-        this.nameGift = nameGift;
-        this.imageUrl = imageUrl;
+    public GiftPost( User author, int namepost, int descpodt, int imageUrl) {
         this.author = author;
-        this.whenPosted = whenPosted;
+        this.namepost = namepost;
+        this.imageUrl = imageUrl;
+        this.descpodt = descpodt;
     }
 
-    public int getID() {
-        return this.id;
+    public int getNamePost() {
+        return this.namepost;
     }
 
-    public int getNameGift() {
-        return this.nameGift;
+    public int getDescPodt() {
+        return this.descpodt;
     }
 
     public User getAuthor() {
         return this.author;
     }
 
-    public int getWhenPosted() {
-        return this.whenPosted;
-    }
-
     public int getImageUrl() {
         return imageUrl;
     }
-
-    public int getProfileImage () { return author.getProfileImage(); }
 
     public void select() {
         // = this.nameGift + " selected";

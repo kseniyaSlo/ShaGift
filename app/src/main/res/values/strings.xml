@@ -64,5 +64,14 @@
     <string name="lbl_forgot_password">Forgot password?</string>
     <string name="forgot_password_msg">We just need your registered Email Id to sent you password reset instructions.</string>
     <string name="title_activity_sign_up">SignUpActivity</string>
+
+    <string name="send">Send</string>
+    <string name="new_postname">Type the Name here</string>
+    <string name="new_postdesc">Type the Description here</string>
+    <string name="new_attach">attach</string>
+    <string name="new_capture">capture</string>
+    <string name="new_send">Post</string>
+    <string name="new_gallery">Gallery</string>
+    <string name="resume">resume</string>
 </resources>
 

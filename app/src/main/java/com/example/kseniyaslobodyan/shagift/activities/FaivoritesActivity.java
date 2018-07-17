@@ -1,99 +1,89 @@
 package com.example.kseniyaslobodyan.shagift.activities;
 
-import android.arch.lifecycle.LiveData;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.support.annotation.NonNull;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.VideoView;
 
 import com.bumptech.glide.Glide;
-import com.example.kseniyaslobodyan.shagift.R;
 import com.example.kseniyaslobodyan.shagift.model.Post;
-import com.example.kseniyaslobodyan.shagift.model.PostEvent;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.auth.FirebaseAuth;
-
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
-import java.util.List;
+import com.example.kseniyaslobodyan.shagift.R;
+import com.example.kseniyaslobodyan.shagift.model.PostEvent;
 
-public class GiftListActivity extends AppCompatActivity {
 
+public class FaivoritesActivity extends AppCompatActivity {
     private static final int RC_SIGN_IN = 1;
     private static final String TAG = "MyTag";
     private static final int REQUEST_IMAGE_CAPTURE = 333;
     private static final int REQUEST_WRITE_STORAGE = 444;
     private static final int GET_FROM_GALLERY = 555;
-    PostAdapter adapter;;
-    RecyclerView lstViewFeed;
-
-
+    PostAdapter adapter;
+    RecyclerView lstMessages;
+    ImageView imgCapture;
+    Bitmap imageBitmap;
+    static String userName ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate( savedInstanceState );
-        setContentView( R.layout.activity_test );
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_faivorites);
 
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayShowCustomEnabled( true );
-        actionBar.setCustomView( R.layout.shagift_action_bar_layoutforlist );
+        adapter = new PostAdapter(ModelPost.instance.getAllPosts());
 
-        ImageButton btnLeft = (ImageButton) findViewById( R.id.actionBar_btndashboard );
-        btnLeft.setOnClickListener( new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent( GiftListActivity.this, MainActivity.class );
-                intent.setFlags( Intent.FLAG_ACTIVITY_SINGLE_TOP );
-                startActivity( intent );
-            }
-        } );
+        lstMessages = (RecyclerView) findViewById(R.id.lstMessages);
+        lstMessages.setLayoutManager(new LinearLayoutManager(this));
+        lstMessages.setAdapter(adapter);
 
-        ImageButton btnmenuHome = (ImageButton) findViewById(R.id.actionBar_btndashboard);
-        btnmenuHome.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(GiftListActivity.this, MainActivity.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-                startActivity(intent);
-            }
-        });
 
-        adapter = new PostAdapter( ModelPost.instance.getAllPosts() );
-        lstViewFeed = (RecyclerView) findViewById( R.id.lstViewFeed );
-        lstViewFeed.setLayoutManager( new LinearLayoutManager( this ) );
-        lstViewFeed.setAdapter( adapter );
+        // TODO: abstract the direct access here to FirebaseAuth...
+        if (FirebaseAuth.getInstance().getCurrentUser() == null) {
+           /* startActivityForResult(
+                    AuthUI.getInstance()
+                            .createSignInIntentBuilder()
+                            .setAvailableProviders(Arrays.asList(
+                                    new AuthUI.IdpConfig.EmailBuilder().build(),
+                                    new AuthUI.IdpConfig.GoogleBuilder().build()))
+                            .build(),
+                    RC_SIGN_IN);*/
+        }
     }
 
 
     class PostHolder extends RecyclerView.ViewHolder{
 
-        public TextView authorPost;
-        public TextView postName;
-        public TextView postDesc;
-        public ImageView imgGift;
+        public TextView tvAuthor;
+        public TextView tvName;
+        public TextView tvDesc;
+        public ImageView imgPost;
+        public VideoView vidPlayer;
 
         public PostHolder(View itemView) {
             super(itemView);
-            authorPost = (TextView) itemView.findViewById(R.id.feed_authorpost);
-            postName = (TextView) itemView.findViewById(R.id.feed_postnmame);
-            postDesc = (TextView) itemView.findViewById(R.id.feed_postdesc);
-            imgGift = (ImageView) itemView.findViewById(R.id.feed_post_img);
+            tvAuthor = (TextView) itemView.findViewById(R.id.tvAuthor);
+            tvName = (TextView) itemView.findViewById(R.id.tvName);
+            tvDesc = (TextView) itemView.findViewById(R.id.tvDesc);
+            imgPost = (ImageView) itemView.findViewById(R.id.imgPost);
+            vidPlayer = (VideoView) itemView.findViewById(R.id.vidPlayer);
         }
     }
+
 
     class PostAdapter extends FirebaseRecyclerAdapter<Post,PostHolder> {
 
@@ -104,19 +94,19 @@ public class GiftListActivity extends AppCompatActivity {
         }
 
         protected void onBindViewHolder(PostHolder holder, int position, @NonNull Post post) {
-            holder.authorPost.setText(post.getAuthorName());
-            holder.postName.setText(post.getNamePost());
-            holder.postDesc.setText(post.getPostDescription());
+            holder.tvAuthor.setText(post.getAuthorName());
+            holder.tvName.setText(post.getNamePost());
+            holder.tvDesc.setText(post.getPostDescription());
 
             if (!post.getImage().isEmpty()) {
-                Glide.with(GiftListActivity.this)
+                Glide.with(FaivoritesActivity.this)
                         .load(post.getImage())
-                        .into(holder.imgGift);
+                        .into(holder.imgPost);
             }
         }
 
         public PostHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-            View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.feed_post_layout, parent, false);
+            View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.favoriteposts_layout, parent, false);
             return new PostHolder(v);
         }
 
@@ -133,6 +123,7 @@ public class GiftListActivity extends AppCompatActivity {
 
         if (requestCode == RC_SIGN_IN && resultCode == RESULT_OK)
             adapter.notifyDataSetChanged();
+
     }
 
     @Override
@@ -148,6 +139,4 @@ public class GiftListActivity extends AppCompatActivity {
         adapter.stopListening();
         EventBus.getDefault().unregister(this);
     }
-
 }
-

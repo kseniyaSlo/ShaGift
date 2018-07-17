@@ -1,11 +1,9 @@
 package com.example.kseniyaslobodyan.shagift.activities;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -14,10 +12,9 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageButton;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+
+import android.widget.LinearLayout;
 
 
 import com.example.kseniyaslobodyan.shagift.adapters.DashboardAdapter;
@@ -27,6 +24,8 @@ import com.example.kseniyaslobodyan.shagift.model.User;
 
 
 public class MainActivity extends AppCompatActivity  {
+
+    static final int REQUEST_IMAGE_CAPTURE = 1;
 
     //Hard Code data until the server will connected
     int[] images = {R.drawable.image1,
@@ -40,24 +39,21 @@ public class MainActivity extends AppCompatActivity  {
             R.drawable.image9};
 
 
-    User user1 = new User("Kseniya1 test",R.drawable.post_profile1);
-    User user2 = new User("Dan test",R.drawable.post_profile1);
-    User user3 = new User("Ron test",R.drawable.post_profile1);
+    /***AAAAAAAAAAAAA*/
+
+
+    User user1 = new User("123" , "Kseniya1 test","a@a.com",R.drawable.post_profile1);
+    User user2 = new User("123" , "Kseniya1 test","a@a.com",R.drawable.post_profile1);
+    User user3 = new User("123" , "Kseniya1 test","a@a.com",R.drawable.post_profile1);
+
+
 
     //int id, int nameGift,  User author, int whenPosted, int imageUrl,
     private GiftPost[] giftPos = {
-            new GiftPost(1,R.string.abc_an_amazing_alphabet_book,user1,R.string.now,R.drawable.image1),
-            new GiftPost(2,R.string.abc_an_amazing_alphabet_book,user2,R.string.now,R.drawable.image2),
-            new GiftPost(3,R.string.abc_an_amazing_alphabet_book,user3,R.string.now,R.drawable.image3),
-            new GiftPost(4,R.string.abc_an_amazing_alphabet_book,user1,R.string.now,R.drawable.image5),
-            new GiftPost(5,R.string.abc_an_amazing_alphabet_book,user2,R.string.now,R.drawable.image6),
-            new GiftPost(6,R.string.abc_an_amazing_alphabet_book,user3,R.string.now,R.drawable.image4),
-            new GiftPost(7,R.string.abc_an_amazing_alphabet_book,user2,R.string.now,R.drawable.image7),
-            new GiftPost(9,R.string.abc_an_amazing_alphabet_book,user3,R.string.now,R.drawable.image8),
-            new GiftPost(2,R.string.abc_an_amazing_alphabet_book,user2,R.string.now,R.drawable.image2),
-            new GiftPost(3,R.string.abc_an_amazing_alphabet_book,user3,R.string.now,R.drawable.image3),
-            new GiftPost(4,R.string.abc_an_amazing_alphabet_book,user1,R.string.now,R.drawable.image5),
-            new GiftPost(5,R.string.abc_an_amazing_alphabet_book,user2,R.string.now,R.drawable.image6)
+            new  GiftPost(user1,131,5454, R.drawable.image3),
+            new  GiftPost(user1,131,5454, R.drawable.image1),
+            new  GiftPost(user1,131,5454, R.drawable.image2),
+            new  GiftPost(user1,131,5454, R.drawable.image4),
     };
 
     @Override
@@ -83,7 +79,6 @@ public class MainActivity extends AppCompatActivity  {
             }
         });
 
-
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayShowCustomEnabled(true);
         actionBar.setCustomView(R.layout.shagift_action_bar_layout);
@@ -99,11 +94,50 @@ public class MainActivity extends AppCompatActivity  {
         });
     }
 
+
     @Override
     protected void onStart() {
         super.onStart();
 
-    //    LinearLayout bottom_menu = (LinearLayout)findViewById(R.id.bottom_menu);
+
+        /***ADD To ALL**/
+        LinearLayout bottom_menu = (LinearLayout)findViewById(R.id.bottom_menu);
+
+        //add post gift button in the bottom menu
+        ImageButton btnaddpostgift = (ImageButton) bottom_menu.findViewById(R.id.bottom_menu_addgift);
+        btnaddpostgift.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //start the new post fragment
+                CustomDialog customDialog = new CustomDialog();
+                customDialog.show(getSupportFragmentManager(), "");
+            }
+        });
+
+        //faivorite button in the bottom menu
+        ImageButton btnfaivorite = (ImageButton) bottom_menu.findViewById(R.id.bottom_menu_faivorite);
+        btnfaivorite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, FaivoritesActivity.class);
+                startActivity(intent);
+                finish();
+
+            }
+        });
+
+        //userprofile button in the bottom menu
+        ImageButton btnuserprofile = (ImageButton) bottom_menu.findViewById(R.id.bottom_menu_userprofile);
+        btnuserprofile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
+                startActivity(intent);
+                finish();
+
+
+            }
+        });
 
     }
 
