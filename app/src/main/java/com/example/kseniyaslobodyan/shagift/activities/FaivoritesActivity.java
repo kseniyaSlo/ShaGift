@@ -118,15 +118,6 @@ public class FaivoritesActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        if (requestCode == RC_SIGN_IN && resultCode == RESULT_OK)
-            adapter.notifyDataSetChanged();
-
-    }
-
-    @Override
     protected void onStart() {
         super.onStart();
         adapter.startListening();
@@ -138,5 +129,14 @@ public class FaivoritesActivity extends AppCompatActivity {
         super.onStop();
         adapter.stopListening();
         EventBus.getDefault().unregister(this);
+    }    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == RC_SIGN_IN && resultCode == RESULT_OK)
+            adapter.notifyDataSetChanged();
+
     }
+
+
 }

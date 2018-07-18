@@ -46,7 +46,7 @@ public class GiftListActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
-        setContentView( R.layout.activity_test );
+        setContentView( R.layout.activity_gift_list );
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayShowCustomEnabled( true );
@@ -140,6 +140,8 @@ public class GiftListActivity extends AppCompatActivity {
         super.onStart();
         adapter.startListening();
         EventBus.getDefault().register(this);
+
+
     }
 
     @Override

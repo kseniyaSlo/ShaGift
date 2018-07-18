@@ -7,6 +7,10 @@ import android.arch.persistence.room.PrimaryKey;
 @Entity(tableName = "posts")
 
 public class Post {
+
+    private int id;
+    private String authorId, authorName,  namePost, postDescription,  image;
+    /*
     @PrimaryKey(autoGenerate = true)
     private int id;
 
@@ -23,7 +27,7 @@ public class Post {
     private String postDescription;
 
     @ColumnInfo(name = "image")
-    private String image;
+    private String image;*/
 
     public Post() {
     }
@@ -81,4 +85,5 @@ public class Post {
     public String toString() {
         return authorId + "," + authorName + "," + namePost + "," + postDescription+ " ," + image ;
     }
+
 }

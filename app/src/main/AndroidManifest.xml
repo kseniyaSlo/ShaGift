@@ -34,7 +34,9 @@
             android:theme="@style/AppIntro" />
         <activity android:name=".activities.FaivoritesActivity" />
         <activity android:name=".activities.GiftListActivityDao" />
-        <activity android:name=".activities.ProfileActivity"></activity>
+        <activity android:name=".activities.ProfileActivity" />
+        <activity android:name=".firebase.TestActivity" />
+        <activity android:name=".firebase.DetailActivity" />
     </application>
 
 </manifest>

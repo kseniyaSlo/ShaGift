@@ -17,7 +17,7 @@
         app:srcCompat="@mipmap/ic_launcher_round" />
 
     <TextView
-        android:id="@+id/feed_post_when"
+        android:id="@+id/feed_authorpost"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="250dp"
@@ -39,11 +39,11 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/detail_post_img"
+        android:id="@+id/feed_post_img"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:scaleType="fitXY"
-        app:layout_constraintBottom_toTopOf="@+id/detail_description"
+        app:layout_constraintBottom_toTopOf="@+id/feed_postdesc"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -52,7 +52,7 @@
         app:srcCompat="@drawable/image1" />
 
     <TextView
-        android:id="@+id/detail_description"
+        android:id="@+id/feed_postdesc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginEnd="3dp"
@@ -61,7 +61,7 @@
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/detail_post_img" />
+        app:layout_constraintTop_toBottomOf="@+id/feed_post_img" />
 
     <LinearLayout
         android:id="@+id/linearLayout"

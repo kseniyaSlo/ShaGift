@@ -15,7 +15,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.kseniyaslobodyan.shagift.ViewModel.StudentsViewModel2;
 import com.example.kseniyaslobodyan.shagift.model.Post;
 import com.example.kseniyaslobodyan.shagift.R;
 
@@ -24,7 +23,7 @@ import java.util.List;
 
 public class GiftListActivityDao extends AppCompatActivity {
 
-    private StudentsViewModel2 viewModel;
+   /* private StudentsViewModel2 viewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,7 +60,7 @@ public class GiftListActivityDao extends AppCompatActivity {
                     }
                 }).start();
             }
-        });*/
+        });
 
     }
 
@@ -108,5 +107,5 @@ public class GiftListActivityDao extends AppCompatActivity {
         }
 
 
-    }
+    }*/
 }
