@@ -1,4 +1,4 @@
-package com.example.kseniyaslobodyan.shagift.firebase;
+package com.example.kseniyaslobodyan.shagift.testGridViewFirebase;
 
 import android.util.Log;
 

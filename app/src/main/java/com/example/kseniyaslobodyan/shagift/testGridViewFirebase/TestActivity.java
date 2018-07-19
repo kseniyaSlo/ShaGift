@@ -1,4 +1,4 @@
-package com.example.kseniyaslobodyan.shagift.firebase;
+package com.example.kseniyaslobodyan.shagift.testGridViewFirebase;
 
 import android.app.Dialog;
 import android.support.design.widget.FloatingActionButton;
@@ -15,8 +15,6 @@ import com.example.kseniyaslobodyan.shagift.R;
 import com.example.kseniyaslobodyan.shagift.model.Post;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-
-import org.greenrobot.eventbus.EventBus;
 /*
 1.INITIALIZE FIREBASE DB
 2.INITIALIZE UI
@@ -46,15 +44,13 @@ public class TestActivity extends AppCompatActivity {
         db = FirebaseDatabase.getInstance().getReference();
         helper = new FirebaseHelper(db);
 
-
-
         //ADAPTER - retrieving the posts
-       // adapter = new CustomAdapter(this,helper.retrieve());
-       // gv.setAdapter(adapter);
-
-
-        adapter=new CustomAdapter(TestActivity.this,helper.retrieve());
+        adapter = new CustomAdapter(this,helper.retrieve());
         gv.setAdapter(adapter);
+
+
+      //  adapter=new CustomAdapter(TestActivity.this,helper.retrieve());
+      //  gv.setAdapter(adapter);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -76,6 +72,9 @@ public class TestActivity extends AppCompatActivity {
         propTxt= (EditText) d.findViewById(R.id.propellantEditText);
         descTxt= (EditText) d.findViewById(R.id.descEditText);
         Button saveBtn= (Button) d.findViewById(R.id.saveBtn);
+
+        d.show();
+
 
         //SAVE
         saveBtn.setOnClickListener(new View.OnClickListener() {

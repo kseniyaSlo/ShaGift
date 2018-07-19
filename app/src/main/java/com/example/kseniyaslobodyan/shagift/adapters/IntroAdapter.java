@@ -9,9 +9,9 @@ import com.example.kseniyaslobodyan.shagift.model.DataIntro;
 
 public class IntroAdapter extends FragmentPagerAdapter {
 
-    DataIntro[] data = { new DataIntro("Lets talk about the elephant in the room", R.drawable.intro1),
-                    new DataIntro("Do more, think less", R.drawable.intro2),
-                    new DataIntro("Eat healthy", R.drawable.intro3)};
+    DataIntro[] data = { new DataIntro("Welcome to Shagift", R.drawable.sec3 ),
+                    new DataIntro("You can add gift post too", R.drawable.sec2 ),
+                    new DataIntro("See profile page", R.drawable.sec1 )};
 
     public IntroAdapter(FragmentManager fm) {
         super(fm);

@@ -75,7 +75,7 @@ public class ModelPost {
     public FirebaseRecyclerOptions<Post> getAllPosts() {
 
         //will work with no Wifi
-        FirebaseDatabase.getInstance().setPersistenceEnabled(true);
+       // FirebaseDatabase.getInstance().setPersistenceEnabled(true);
         DatabaseReference mRef = FirebaseDatabase.getInstance().getReference().child("Posts");
         FirebaseRecyclerOptions<Post> options = new FirebaseRecyclerOptions.Builder<Post>().
                 setQuery(mRef, Post.class).build();

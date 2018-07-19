@@ -26,7 +26,7 @@ public class IntroActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_intro);
 
-        if (isFirstTime()) {
+       // if (isFirstTime()) {
         introPager = (ViewPager) findViewById(R.id.pager);
         introPager.setAdapter(new IntroAdapter(getSupportFragmentManager()));
         introPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
@@ -63,13 +63,13 @@ public class IntroActivity extends AppCompatActivity {
                     startActivity(intent);
                 }
             });
-        }
+        /*}
         else {
             Intent intent = new Intent();
             intent.setClass(this, MainActivity.class);
             startActivity(intent);
             finish();
-        }
+        }*/
     }
 
     private boolean isFirstTime() {

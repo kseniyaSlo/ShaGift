@@ -51,23 +51,16 @@
                 android:paddingBottom="24dp">
 
 
-                <ImageView
-                    android:id="@+id/add_friend"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_toLeftOf="@+id/drop_down_option_menu"
-                    android:src="@drawable/ic_action_user_add" />
-
-                <ImageView
-                    android:id="@+id/drop_down_option_menu"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginTop="16dp"
-                    android:src="@drawable/ic_action_overflow" />
+                <android.support.design.widget.FloatingActionButton
+                    android:id="@+id/btnbackmain"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_gravity="bottom|end"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginTop="18dp"
+                    android:src="@drawable/ic_home_white_24dp" />
 
                 <TextView
                     android:id="@+id/user_profile_name"

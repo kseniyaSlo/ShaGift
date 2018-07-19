@@ -1,4 +1,4 @@
-package com.example.kseniyaslobodyan.shagift.firebase;
+package com.example.kseniyaslobodyan.shagift.testGridViewFirebase;
 
 import android.content.Context;
 import android.content.Intent;
@@ -65,7 +65,7 @@ public class CustomAdapter extends BaseAdapter {
             @Override
             public void onClick(View v) {
                 //OPEN DETAIL
-                openDetailActivity( p.getAuthorName(), p.getNamePost(), p.getPostDescription());
+                openDetailActivity( p.getAuthorName(), p.getNamePost(), p.getImage());
             }
         });
 

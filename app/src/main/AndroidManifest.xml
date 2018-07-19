@@ -35,8 +35,9 @@
         <activity android:name=".activities.FaivoritesActivity" />
         <activity android:name=".activities.GiftListActivityDao" />
         <activity android:name=".activities.ProfileActivity" />
-        <activity android:name=".firebase.TestActivity" />
-        <activity android:name=".firebase.DetailActivity" />
+        <activity android:name=".testGridViewFirebase.TestActivity" />
+        <activity android:name=".testGridViewFirebase.DetailActivity" />
+        <activity android:name=".TEST.MainActivity2" />
     </application>
 
 </manifest>

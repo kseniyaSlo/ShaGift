@@ -12,7 +12,7 @@ import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.ImageButton;
 
-import com.example.kseniyaslobodyan.shagift.firebase.TestActivity;
+import com.example.kseniyaslobodyan.shagift.testGridViewFirebase.TestActivity;
 import com.google.firebase.auth.FirebaseAuth;
 
 import android.widget.LinearLayout;
@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity  {
         btnfaivorite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, FaivoritesActivity.class);
+                Intent intent = new Intent(MainActivity.this, TestActivity.class);
                 startActivity(intent);
                 finish();
 

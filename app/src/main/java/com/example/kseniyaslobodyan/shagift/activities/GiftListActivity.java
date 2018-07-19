@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -85,6 +86,7 @@ public class GiftListActivity extends AppCompatActivity {
         public TextView postName;
         public TextView postDesc;
         public ImageView imgGift;
+       // public LinearLayout linearLayout;
 
         public PostHolder(View itemView) {
             super(itemView);
@@ -92,6 +94,7 @@ public class GiftListActivity extends AppCompatActivity {
             postName = (TextView) itemView.findViewById(R.id.feed_postnmame);
             postDesc = (TextView) itemView.findViewById(R.id.feed_postdesc);
             imgGift = (ImageView) itemView.findViewById(R.id.feed_post_img);
+            //linearLayout = (LinearLayout) itemView.findViewById( R.id.linearLayout );
         }
     }
 
@@ -107,6 +110,7 @@ public class GiftListActivity extends AppCompatActivity {
             holder.authorPost.setText(post.getAuthorName());
             holder.postName.setText(post.getNamePost());
             holder.postDesc.setText(post.getPostDescription());
+            //holder.linearLayout.s
 
             if (!post.getImage().isEmpty()) {
                 Glide.with(GiftListActivity.this)
@@ -115,9 +119,23 @@ public class GiftListActivity extends AppCompatActivity {
             }
         }
 
+       // LinearLayout bottom_menu = (LinearLayout)findViewById(R.id.bottom_menu);
+
+       /* ImageButton btnfaivorite = (ImageButton) feed_post_layout.findViewById(R.id.bottom_menu_faivorite);
+        btnfaivorite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, FaivoritesActivity.class);
+                startActivity(intent);
+                finish();
+
+            }
+        });*/
+
         public PostHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
             View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.feed_post_layout, parent, false);
             return new PostHolder(v);
+
         }
 
     }
