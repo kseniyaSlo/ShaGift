@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TEST.Main3Activity">
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".RoomDao.CommentsActivity"
+    tools:showIn="@layout/activity_comments">
 
 </android.support.constraint.ConstraintLayout>

@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/mainFrame"
-    tools:context=".activities.MainActivity">
+    android:background="@color/browser_actions_bg_grey"
+    tools:context=".activities.MyPostActivity">
+
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/lstViewFeed"
+        android:id="@+id/lstMessages"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:dividerHeight="5dp"></android.support.v7.widget.RecyclerView>
+        android:layout_height="match_parent" />
 
 
     <include

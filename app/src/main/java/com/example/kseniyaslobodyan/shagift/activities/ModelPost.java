@@ -69,6 +69,11 @@ public class ModelPost {
 
             DatabaseReference mRef = FirebaseDatabase.getInstance().getReference().child("Posts");
             mRef.child(mRef.push().getKey()).setValue(giftPost);
+
+            String userId=FirebaseAuth.getInstance().getCurrentUser().getUid();
+
+            DatabaseReference mypostRef = FirebaseDatabase.getInstance().getReference().child("MyPosts/" + userId );
+            mypostRef.child(mRef.push().getKey()).setValue(giftPost);
         }
     }
 
@@ -77,6 +82,28 @@ public class ModelPost {
         //will work with no Wifi
        // FirebaseDatabase.getInstance().setPersistenceEnabled(true);
         DatabaseReference mRef = FirebaseDatabase.getInstance().getReference().child("Posts");
+        FirebaseRecyclerOptions<Post> options = new FirebaseRecyclerOptions.Builder<Post>().
+                setQuery(mRef, Post.class).build();
+        return options;
+    }
+
+    public FirebaseRecyclerOptions<Post> getAllFavoritesPosts() {
+
+        //will work with no Wifi
+        // FirebaseDatabase.getInstance().setPersistenceEnabled(true);
+        String userId=FirebaseAuth.getInstance().getCurrentUser().getUid();
+        DatabaseReference mRef = FirebaseDatabase.getInstance().getReference().child("FavoritesPosts/" + userId );
+        FirebaseRecyclerOptions<Post> options = new FirebaseRecyclerOptions.Builder<Post>().
+                setQuery(mRef, Post.class).build();
+        return options;
+    }
+
+    public FirebaseRecyclerOptions<Post> getAllMyPosts() {
+
+        //will work with no Wifi
+        // FirebaseDatabase.getInstance().setPersistenceEnabled(true);
+        String userId=FirebaseAuth.getInstance().getCurrentUser().getUid();
+        DatabaseReference mRef = FirebaseDatabase.getInstance().getReference().child("MyPosts/" + userId );
         FirebaseRecyclerOptions<Post> options = new FirebaseRecyclerOptions.Builder<Post>().
                 setQuery(mRef, Post.class).build();
         return options;

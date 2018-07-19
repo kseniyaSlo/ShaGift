@@ -73,5 +73,6 @@
     <string name="new_send">Post</string>
     <string name="new_gallery">Gallery</string>
     <string name="resume">resume</string>
+    <string name="title_activity_comments">CommentsActivity</string>
 </resources>
 

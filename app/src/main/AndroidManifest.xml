@@ -38,6 +38,12 @@
         <activity android:name=".testGridViewFirebase.TestActivity" />
         <activity android:name=".testGridViewFirebase.DetailActivity" />
         <activity android:name=".TEST.MainActivity2" />
+        <activity android:name=".activities.MyPostActivity" />
+        <activity android:name=".activities.DashboardActivity" />
+        <activity
+            android:name=".RoomDao.CommentsActivity"
+            android:label="@string/title_activity_comments"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
